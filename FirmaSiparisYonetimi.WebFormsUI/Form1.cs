@@ -60,5 +60,77 @@ namespace FirmaSiparisYonetimi.WebFormsUI
         {
 
         }
+
+        private void btn_firmaguncelle_Click(object sender, EventArgs e)
+        {
+            _firmaService.Update(new Firma
+            {
+                firma_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                onay_durumu = txtonaydurumuguncelleme.SelectedText,
+                siparis_izin_baslangic_saati = baslangicguncelle.Value,
+                siparis_izin_bitis_saati = bitisguncelle.Value
+                
+            });
+
+            MessageBox.Show("Firma Güncellendi...");
+        }
+
+        private void btnurunekleme_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _urunService.Add(new Urun
+                {
+
+                    firma_id = Convert.ToInt16(txturunadi.Text),
+                    urun_adi = txtonaydurumu.Text,
+                    urun_stok = Convert.ToInt32(txturunstok.Text),
+                    urun_fiyati = Convert.ToInt32(txturunfiyati.Text)
+                });
+                MessageBox.Show("Ürün eklendi...");
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+        }
+
+        private void btn_firmalistele_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = _firmaService.GetAll();
+        }
+
+        private void btn_siparisolusturma_Click(object sender, EventArgs e)
+        {
+            label16.Text = DateTime.Now.ToLongDateString();
+            label17.Text = DateTime.Now.ToLongTimeString(); 
+            try
+            {
+                _siparisService.Add(new Siparis
+                {
+
+                    firma_id = Convert.ToInt16(txturunadi.Text),
+                    urun_id = Convert.ToInt16(txtsiparisurunid.Text),
+                    siparis_kisi_adi = txtsiparisverenkisininadi.Text,
+                    siparis_tarih = siparistarih.Value
+                });
+                MessageBox.Show("Sipariş eklendi...");
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

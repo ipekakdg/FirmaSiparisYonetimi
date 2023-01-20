@@ -35,22 +35,19 @@
             this.btn_siparisolusturma = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtfirmaadi = new System.Windows.Forms.TextBox();
-            this.txtonaydurumu = new System.Windows.Forms.TextBox();
-            this.txtsiparisizinbaslangicsaati = new System.Windows.Forms.TextBox();
-            this.tctsiparisizinbitissaati = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtonaydurumu = new System.Windows.Forms.TextBox();
+            this.txtfirmaadi = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtonaydurumuguncelleme = new System.Windows.Forms.TextBox();
-            this.txtsiparisizinsaatiguncelleme = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,17 +56,21 @@
             this.txturunstok = new System.Windows.Forms.TextBox();
             this.txtfirmaid = new System.Windows.Forms.TextBox();
             this.txturunadi = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtsiparistarihi = new System.Windows.Forms.TextBox();
             this.txtsiparisverenkisininadi = new System.Windows.Forms.TextBox();
             this.txtsiparisurunid = new System.Windows.Forms.TextBox();
             this.txtsiparisfirmaid = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.bitisguncelle = new System.Windows.Forms.DateTimePicker();
+            this.baslangicguncelle = new System.Windows.Forms.DateTimePicker();
+            this.siparistarih = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -96,6 +97,7 @@
             this.btn_firmaguncelle.TabIndex = 1;
             this.btn_firmaguncelle.Text = "Firma Güncelleme";
             this.btn_firmaguncelle.UseVisualStyleBackColor = true;
+            this.btn_firmaguncelle.Click += new System.EventHandler(this.btn_firmaguncelle_Click);
             // 
             // btn_firmalistele
             // 
@@ -105,6 +107,7 @@
             this.btn_firmalistele.TabIndex = 2;
             this.btn_firmalistele.Text = "Firma Listeleme";
             this.btn_firmalistele.UseVisualStyleBackColor = true;
+            this.btn_firmalistele.Click += new System.EventHandler(this.btn_firmalistele_Click);
             // 
             // btnurunekleme
             // 
@@ -114,6 +117,7 @@
             this.btnurunekleme.TabIndex = 3;
             this.btnurunekleme.Text = "Ürün Ekleme";
             this.btnurunekleme.UseVisualStyleBackColor = true;
+            this.btnurunekleme.Click += new System.EventHandler(this.btnurunekleme_Click);
             // 
             // btn_siparisolusturma
             // 
@@ -123,6 +127,7 @@
             this.btn_siparisolusturma.TabIndex = 4;
             this.btn_siparisolusturma.Text = "Sipariş Oluşturma";
             this.btn_siparisolusturma.UseVisualStyleBackColor = true;
+            this.btn_siparisolusturma.Click += new System.EventHandler(this.btn_siparisolusturma_Click);
             // 
             // dataGridView1
             // 
@@ -150,21 +155,110 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firma Ekleme";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(27, 128);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(27, 89);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Sipariş İzin Bitiş Saati : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Sipariş İzin Başlangıç Saati :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Onay Durumu :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Firma Adı : ";
+            // 
+            // txtonaydurumu
+            // 
+            this.txtonaydurumu.Location = new System.Drawing.Point(127, 50);
+            this.txtonaydurumu.Name = "txtonaydurumu";
+            this.txtonaydurumu.Size = new System.Drawing.Size(100, 20);
+            this.txtonaydurumu.TabIndex = 2;
+            // 
+            // txtfirmaadi
+            // 
+            this.txtfirmaadi.Location = new System.Drawing.Point(127, 20);
+            this.txtfirmaadi.Name = "txtfirmaadi";
+            this.txtfirmaadi.Size = new System.Drawing.Size(100, 20);
+            this.txtfirmaadi.TabIndex = 1;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.baslangicguncelle);
+            this.groupBox2.Controls.Add(this.bitisguncelle);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtonaydurumuguncelleme);
-            this.groupBox2.Controls.Add(this.txtsiparisizinsaatiguncelleme);
-            this.groupBox2.Controls.Add(this.tctsiparisizinbitissaati);
             this.groupBox2.Controls.Add(this.btn_firmaguncelle);
-            this.groupBox2.Controls.Add(this.txtsiparisizinbaslangicsaati);
             this.groupBox2.Location = new System.Drawing.Point(275, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(239, 206);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Firma Güncelleme";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Onay Durumu Güncelleme :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(223, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Sipariş İzin Saati Güncelleme (Başlangıç-Bitiş):";
+            // 
+            // txtonaydurumuguncelleme
+            // 
+            this.txtonaydurumuguncelleme.Location = new System.Drawing.Point(127, 120);
+            this.txtonaydurumuguncelleme.Name = "txtonaydurumuguncelleme";
+            this.txtonaydurumuguncelleme.Size = new System.Drawing.Size(100, 20);
+            this.txtonaydurumuguncelleme.TabIndex = 10;
             // 
             // groupBox3
             // 
@@ -183,132 +277,6 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ürün Ekleme";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.btn_firmalistele);
-            this.groupBox4.Location = new System.Drawing.Point(30, 267);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(239, 206);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Firma Listeleme";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.txtsiparistarihi);
-            this.groupBox5.Controls.Add(this.txtsiparisverenkisininadi);
-            this.groupBox5.Controls.Add(this.txtsiparisurunid);
-            this.groupBox5.Controls.Add(this.txtsiparisfirmaid);
-            this.groupBox5.Controls.Add(this.btn_siparisolusturma);
-            this.groupBox5.Location = new System.Drawing.Point(276, 267);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(239, 211);
-            this.groupBox5.TabIndex = 7;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Sipariş Oluşturma";
-            // 
-            // txtfirmaadi
-            // 
-            this.txtfirmaadi.Location = new System.Drawing.Point(127, 20);
-            this.txtfirmaadi.Name = "txtfirmaadi";
-            this.txtfirmaadi.Size = new System.Drawing.Size(100, 20);
-            this.txtfirmaadi.TabIndex = 1;
-            // 
-            // txtonaydurumu
-            // 
-            this.txtonaydurumu.Location = new System.Drawing.Point(127, 50);
-            this.txtonaydurumu.Name = "txtonaydurumu";
-            this.txtonaydurumu.Size = new System.Drawing.Size(100, 20);
-            this.txtonaydurumu.TabIndex = 2;
-            // 
-            // txtsiparisizinbaslangicsaati
-            // 
-            this.txtsiparisizinbaslangicsaati.Location = new System.Drawing.Point(-19, 120);
-            this.txtsiparisizinbaslangicsaati.Name = "txtsiparisizinbaslangicsaati";
-            this.txtsiparisizinbaslangicsaati.Size = new System.Drawing.Size(83, 20);
-            this.txtsiparisizinbaslangicsaati.TabIndex = 3;
-            // 
-            // tctsiparisizinbitissaati
-            // 
-            this.tctsiparisizinbitissaati.Location = new System.Drawing.Point(-3, 120);
-            this.tctsiparisizinbitissaati.Name = "tctsiparisizinbitissaati";
-            this.tctsiparisizinbitissaati.Size = new System.Drawing.Size(83, 20);
-            this.tctsiparisizinbitissaati.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Firma Adı : ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Onay Durumu :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Sipariş İzin Başlangıç Saati :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Sipariş İzin Bitiş Saati : ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 79);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Onay Durumu Güncelleme :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Sipariş İzin Saati Güncelleme :";
-            // 
-            // txtonaydurumuguncelleme
-            // 
-            this.txtonaydurumuguncelleme.Location = new System.Drawing.Point(127, 105);
-            this.txtonaydurumuguncelleme.Name = "txtonaydurumuguncelleme";
-            this.txtonaydurumuguncelleme.Size = new System.Drawing.Size(100, 20);
-            this.txtonaydurumuguncelleme.TabIndex = 10;
-            // 
-            // txtsiparisizinsaatiguncelleme
-            // 
-            this.txtsiparisizinsaatiguncelleme.Location = new System.Drawing.Point(127, 46);
-            this.txtsiparisizinsaatiguncelleme.Name = "txtsiparisizinsaatiguncelleme";
-            this.txtsiparisizinsaatiguncelleme.Size = new System.Drawing.Size(100, 20);
-            this.txtsiparisizinsaatiguncelleme.TabIndex = 9;
             // 
             // label5
             // 
@@ -374,6 +342,17 @@
             this.txturunadi.Size = new System.Drawing.Size(100, 20);
             this.txturunadi.TabIndex = 9;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.btn_firmalistele);
+            this.groupBox4.Location = new System.Drawing.Point(30, 267);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(239, 206);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Firma Listeleme";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -383,6 +362,26 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Firmaları Listelemek İçin Lütfen Tıklayınız : ";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.siparistarih);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.txtsiparisverenkisininadi);
+            this.groupBox5.Controls.Add(this.txtsiparisurunid);
+            this.groupBox5.Controls.Add(this.txtsiparisfirmaid);
+            this.groupBox5.Controls.Add(this.btn_siparisolusturma);
+            this.groupBox5.Location = new System.Drawing.Point(276, 267);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(239, 211);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Sipariş Oluşturma";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -391,6 +390,7 @@
             this.label12.Size = new System.Drawing.Size(73, 13);
             this.label12.TabIndex = 24;
             this.label12.Text = "Sipariş Tarihi :";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -415,16 +415,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 59);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 13);
+            this.label15.Size = new System.Drawing.Size(53, 13);
             this.label15.TabIndex = 21;
-            this.label15.Text = "Ürün Adı : ";
-            // 
-            // txtsiparistarihi
-            // 
-            this.txtsiparistarihi.Location = new System.Drawing.Point(126, 115);
-            this.txtsiparistarihi.Name = "txtsiparistarihi";
-            this.txtsiparistarihi.Size = new System.Drawing.Size(100, 20);
-            this.txtsiparistarihi.TabIndex = 20;
+            this.label15.Text = "Ürün ID : ";
             // 
             // txtsiparisverenkisininadi
             // 
@@ -447,19 +440,44 @@
             this.txtsiparisfirmaid.Size = new System.Drawing.Size(100, 20);
             this.txtsiparisfirmaid.TabIndex = 17;
             // 
-            // dateTimePicker1
+            // bitisguncelle
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 89);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.bitisguncelle.Location = new System.Drawing.Point(22, 75);
+            this.bitisguncelle.Name = "bitisguncelle";
+            this.bitisguncelle.Size = new System.Drawing.Size(200, 20);
+            this.bitisguncelle.TabIndex = 15;
             // 
-            // dateTimePicker2
+            // baslangicguncelle
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(27, 128);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 10;
+            this.baslangicguncelle.Location = new System.Drawing.Point(22, 47);
+            this.baslangicguncelle.Name = "baslangicguncelle";
+            this.baslangicguncelle.Size = new System.Drawing.Size(200, 20);
+            this.baslangicguncelle.TabIndex = 16;
+            // 
+            // siparistarih
+            // 
+            this.siparistarih.Location = new System.Drawing.Point(83, 112);
+            this.siparistarih.Name = "siparistarih";
+            this.siparistarih.Size = new System.Drawing.Size(143, 20);
+            this.siparistarih.TabIndex = 25;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 167);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "label16";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 180);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "label17";
             // 
             // Form1
             // 
@@ -503,8 +521,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tctsiparisizinbitissaati;
-        private System.Windows.Forms.TextBox txtsiparisizinbaslangicsaati;
         private System.Windows.Forms.TextBox txtonaydurumu;
         private System.Windows.Forms.TextBox txtfirmaadi;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -514,7 +530,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtonaydurumuguncelleme;
-        private System.Windows.Forms.TextBox txtsiparisizinsaatiguncelleme;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
@@ -528,12 +543,16 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtsiparistarihi;
         private System.Windows.Forms.TextBox txtsiparisverenkisininadi;
         private System.Windows.Forms.TextBox txtsiparisurunid;
         private System.Windows.Forms.TextBox txtsiparisfirmaid;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker baslangicguncelle;
+        private System.Windows.Forms.DateTimePicker bitisguncelle;
+        private System.Windows.Forms.DateTimePicker siparistarih;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 
